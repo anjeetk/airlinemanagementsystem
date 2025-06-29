@@ -10,12 +10,12 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class Login extends JFrame implements ActionListener {
+public class Main extends JFrame implements ActionListener {
     private final JLabel lblusername, lblpassword;
     JTextField tusername, tpassword;
     JButton submit, reset, close;
 
-    public Login() {
+    public Main() {
         getContentPane().setBackground(Color.WHITE);
 
         lblusername = new JLabel("Username");
@@ -93,6 +93,6 @@ public class Login extends JFrame implements ActionListener {
    }
     public static void main(String[] args) {
 //        new Home();
-        new Login();
+        new Main();
     }
 }
