@@ -239,7 +239,7 @@ public class BookFlight extends JFrame implements ActionListener{
             src = source.getSelectedItem(); 
             dst = destination.getSelectedItem();
             int pnr = random.nextInt(1000000);
-            String query = "insert into reservation values('PNR-"+pnr+"', 'TIC-"+random.nextInt(10000)+"', '"+adhar+"', '"+name+"', '"+nationality+"', '"+fname+"', '"+fcode+"', '"+src+"', '"+dst+"', '"+ddate+"')";
+            String query = "insert into reservation values('PNR-"+pnr+"', 'TIC-"+random.nextInt(10000)+"', '"+adhar+"', '"+name+"', '"+nationality+"', '"+fcode+"', '"+fname+"', '"+src+"', '"+dst+"', '"+ddate+"')";
             try{
                 c.s.executeUpdate(query);
                 
