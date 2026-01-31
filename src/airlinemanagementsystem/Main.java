@@ -65,34 +65,35 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == submit) {
             Conn c = new Conn();
-            
+
             String username = tusername.getText();
             String password = tpassword.getText();
-            
-            String query = "select * from login where username = '"+username+"' and password = '"+password+"'";
-            try{
+
+            String query = "select * from login where username = '" + username + "' and password = '" + password + "'";
+            try {
                 ResultSet rs = c.s.executeQuery(query);
-                if(rs.next()){
+                if (rs.next()) {
                     new Home();
                     setVisible(false);
                     System.out.println("Login Successfull");
-                }else{
-                    JOptionPane.showMessageDialog(null,"Invalid Username or Password");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                     setVisible(false);
                 }
-            }catch(Exception ae){
+            } catch (Exception ae) {
                 ae.printStackTrace();
             }
-                  
+
         } else if (e.getSource() == reset) {
             tpassword.setText("");
             tusername.setText("");
         } else if (e.getSource() == close) {
             setVisible(false);
         }
-   }
+    }
+
     public static void main(String[] args) {
-//        new Home();
+        // new Home();
         new Main();
     }
 }
